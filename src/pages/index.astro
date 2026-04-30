@@ -14,7 +14,7 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
     <meta name="generator" content={Astro.generator} />
     <title>Ignition for macOS — Your next meeting, always in view</title>
     <meta name="description" content="A lightweight macOS menu bar app that shows your next meeting countdown and puts Google Meet and Zoom links one click away." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
     <main class="hero">
@@ -22,43 +22,7 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
       <!-- App Icon -->
       <div class="app-icon-wrap">
         <div class="app-icon">
-          <!--
-            Approximation of the SF Symbol "calendar.badge.clock":
-            a calendar grid with a clock badge in the bottom-right corner.
-          -->
-          <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- Calendar body -->
-            <rect x="8" y="18" width="64" height="58" rx="10" fill="#1e3a5f" />
-            <rect x="8" y="18" width="64" height="58" rx="10" stroke="#3b82f6" stroke-width="2.5" />
-            <!-- Calendar header band -->
-            <rect x="8" y="18" width="64" height="20" rx="10" fill="#2563eb" />
-            <rect x="8" y="28" width="64" height="10" fill="#2563eb" />
-            <!-- Binding pegs -->
-            <rect x="26" y="10" width="6" height="16" rx="3" fill="#60a5fa" />
-            <rect x="48" y="10" width="6" height="16" rx="3" fill="#60a5fa" />
-            <!-- Grid dots (calendar days) -->
-            <circle cx="24" cy="52" r="3.5" fill="#93c5fd" />
-            <circle cx="38" cy="52" r="3.5" fill="#93c5fd" />
-            <circle cx="52" cy="52" r="3.5" fill="#ffffff" opacity="0.9" />
-            <circle cx="24" cy="66" r="3.5" fill="#93c5fd" />
-            <circle cx="38" cy="66" r="3.5" fill="#93c5fd" />
-            <!-- Clock badge shadow/cutout -->
-            <circle cx="72" cy="72" r="20" fill="#0d1117" />
-            <!-- Clock badge face -->
-            <circle cx="72" cy="72" r="18" fill="#1e3a5f" />
-            <circle cx="72" cy="72" r="18" stroke="#3b82f6" stroke-width="2" />
-            <!-- Clock center dot -->
-            <circle cx="72" cy="72" r="1.8" fill="#93c5fd" />
-            <!-- Hour hand (~10 o'clock) -->
-            <line x1="72" y1="72" x2="65" y2="65" stroke="#93c5fd" stroke-width="2.2" stroke-linecap="round" />
-            <!-- Minute hand (~12) -->
-            <line x1="72" y1="72" x2="72" y2="58" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-            <!-- Cardinal tick marks -->
-            <line x1="72" y1="55" x2="72" y2="57.5" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round" />
-            <line x1="72" y1="86.5" x2="72" y2="89" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round" />
-            <line x1="57" y1="72" x2="59.5" y2="72" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round" />
-            <line x1="84.5" y1="72" x2="87" y2="72" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
+          <img src="/Ignition-macOS-Default-256x256@1x.png" alt="Ignition app icon" />
         </div>
       </div>
 
