@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -24,7 +26,8 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -40,7 +43,7 @@ body {
   justify-content: center;
   text-align: center;
   padding: 6rem 1.5rem 4rem;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 /* ── App Icon ─────────────────────────────────────────── */
@@ -61,8 +64,15 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50%       { opacity: 1;   transform: scale(1.08); }
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }
 
 .app-icon {
@@ -72,8 +82,8 @@ body {
   background: linear-gradient(145deg, #1e2a3a 0%, var(--icon-bg) 100%);
   box-shadow:
     0 0 0 1px var(--border),
-    0 8px 32px rgba(0,0,0,0.6),
-    0 2px 8px rgba(0,0,0,0.4);
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +94,7 @@ body {
 .app-icon svg {
   width: 96px;
   height: 96px;
-  filter: drop-shadow(0 2px 8px rgba(59,130,246,0.5));
+  filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.5));
 }
 
 /* ── Copy ─────────────────────────────────────────────── */
@@ -124,14 +134,17 @@ body {
   padding: 0.85rem 2rem;
   border-radius: 12px;
   text-decoration: none;
-  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 4px 18px rgba(59,130,246,0.4);
+  transition:
+    background 0.15s,
+    transform 0.15s,
+    box-shadow 0.15s;
+  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.4);
 }
 
 .download-btn:hover {
   background: var(--accent-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(59,130,246,0.55);
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.55);
 }
 
 .download-btn:active {

@@ -15,6 +15,83 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
     <title>Ignition for macOS — Your next meeting, always in view</title>
     <meta name="description" content="A lightweight macOS menu bar app that shows your next meeting countdown and puts Google Meet and Zoom links one click away." />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <style>
+      /* ── Screenshot Showcase ── */
+      .screenshot-showcase {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+        margin: 2.5rem 0 3rem;
+        width: 100%;
+      }
+
+      .screenshot-toggle {
+        display: inline-flex;
+        background: rgba(0, 0, 0, 0.06);
+        border-radius: 10px;
+        padding: 3px;
+        gap: 2px;
+      }
+
+      .toggle-btn {
+        font-size: 0.82rem;
+        font-weight: 500;
+        padding: 0.35rem 1.1rem;
+        border: none;
+        border-radius: 7px;
+        cursor: pointer;
+        background: transparent;
+        color: #eee;
+        transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+        letter-spacing: 0.01em;
+      }
+
+      .toggle-btn.active {
+        background: #fff;
+        color: #111;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12), 0 0 0 0.5px rgba(0,0,0,0.06);
+      }
+
+      .screenshot-frame {
+        position: relative;
+        width: min(560px, 92vw);
+      }
+
+      .screenshot {
+        width: 100%;
+        border-radius: 14px;
+        box-shadow:
+          0 2px 8px rgba(0, 0, 0, 0.08),
+          0 12px 40px rgba(0, 0, 0, 0.14);
+        display: block;
+        opacity: 0;
+        transition: opacity 0.28s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .screenshot.active {
+        opacity: 1;
+        position: relative;
+        pointer-events: auto;
+      }
+
+      .screenshot-caption {
+        font-size: 0.87rem;
+        color: #888;
+        text-align: center;
+        max-width: 380px;
+        line-height: 1.55;
+        margin: 0;
+      }
+
+      .screenshot-caption strong {
+        color: #ccc;
+      }
+    </style>
   </head>
   <body>
     <main class="hero">
@@ -43,6 +120,37 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
         Download for macOS
       </a>
       <p class="platform-note">Requires macOS 13 Ventura or later</p>
+
+      <!-- Screenshot showcase with toggle -->
+      <div class="screenshot-showcase">
+        <div class="screenshot-toggle" role="group" aria-label="Screenshot mode">
+          <button class="toggle-btn active" data-mode="countdown" aria-pressed="true">
+            Countdown
+          </button>
+          <button class="toggle-btn" data-mode="now" aria-pressed="false">
+            Now
+          </button>
+        </div>
+
+        <div class="screenshot-frame">
+          <img
+            id="screenshot-countdown"
+            src="/Countdown.png"
+            alt="Ignition menu bar showing a 46-minute countdown to the next meeting"
+            class="screenshot active"
+          />
+          <img
+            id="screenshot-now"
+            src="/Now.png"
+            alt="Ignition menu bar showing 'Now' when a meeting is in progress, with current and next meeting details"
+            class="screenshot"
+          />
+        </div>
+
+        <p class="screenshot-caption" id="screenshot-caption">
+          For the first ten minutes of your call, the bar shows <strong>Now</strong> — so you'll never forget where you're supposed to be.
+        </p>
+      </div>
 
       <!-- Feature cards -->
       <div class="features">
@@ -74,6 +182,30 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
       </div>
 
     </main>
+
+    <script>
+      const captions = {
+        countdown: "Before a meeting, you'll see a live <strong>minute countdown</strong> so you're never caught off guard.",
+        now: "When you're in a meeting, the bar shows <strong>Now</strong> — and surfaces the join link front and centre.",
+      };
+
+      document.querySelectorAll('.toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const mode = btn.dataset.mode;
+
+          document.querySelectorAll('.toggle-btn').forEach(b => {
+            b.classList.toggle('active', b === btn);
+            b.setAttribute('aria-pressed', String(b === btn));
+          });
+
+          document.querySelectorAll('.screenshot').forEach(img => {
+            img.classList.toggle('active', img.id === `screenshot-${mode}`);
+          });
+
+          document.getElementById('screenshot-caption').innerHTML = captions[mode];
+        });
+      });
+    </script>
 
     <div class="divider"></div>
 
