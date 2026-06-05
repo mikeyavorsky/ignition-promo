@@ -10,8 +10,8 @@
   --bg: #0d1117;
   --surface: #161b22;
   --border: #30363d;
-  --accent: #3b82f6;
-  --accent-hover: #60a5fa;
+  --accent: hsl(217, 91%, 45%);
+  --accent-hover: hsl(217, 91%, 55%);
   --text: #e6edf3;
   --muted: #8b949e;
   --icon-bg: #1c2128;
@@ -79,11 +79,6 @@ body {
   width: 160px;
   height: 160px;
   border-radius: 36px;
-  background: linear-gradient(145deg, #1e2a3a 0%, var(--icon-bg) 100%);
-  box-shadow:
-    0 0 0 1px var(--border),
-    0 8px 32px rgba(0, 0, 0, 0.6),
-    0 2px 8px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,7 +189,7 @@ body {
   line-height: 1;
 }
 
-.feature-card h3 {
+.feature-card h2 {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text);
