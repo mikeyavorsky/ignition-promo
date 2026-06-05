@@ -219,3 +219,8 @@ footer {
   color: var(--muted);
   font-size: 0.8rem;
 }
+
+.setup {
+  max-width: 50%;
+  margin: 1rem auto;
+}
