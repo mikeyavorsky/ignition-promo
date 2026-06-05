@@ -22,7 +22,7 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
         flex-direction: column;
         align-items: center;
         gap: 1.25rem;
-        margin: 2.5rem 0 3rem;
+        margin: 1.5rem 0 1.5rem;
         width: 100%;
       }
 
@@ -55,7 +55,7 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
 
       .screenshot-frame {
         position: relative;
-        width: min(560px, 92vw);
+        width: min(360px, 92vw);
       }
 
       .screenshot {
@@ -99,7 +99,9 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
       <!-- App Icon -->
       <div class="app-icon-wrap">
         <div class="app-icon">
-          <img class="app-icon" src="/Ignition-macOS-Default-1024x1024@1x.png" alt="Ignition app icon" />
+          <a href="/Ignition.app.zip" download="Ignition.app.zip">
+            <img class="app-icon" src="/Ignition-macOS-Default-1024x1024@1x.png" alt="Ignition app icon — a calendar with a clock in the lower-right corner rendered in white against a purple-to-pink gradient background" />
+          </a>
         </div>
       </div>
 
@@ -109,7 +111,7 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
       </h1>
 
       <p class="sub">
-        Ignition for macOS lives quietly in your menu bar, showing a live countdown to your next event and putting every Google Meet and Zoom link one click away.
+        Ignition for macOS shows a live countdown to your next event in your menu bar — and puts every Google Meet and Zoom link one click away.
       </p>
 
       <!-- Download CTA -->
@@ -125,10 +127,10 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
       <div class="screenshot-showcase">
         <div class="screenshot-toggle" role="group" aria-label="Screenshot mode">
           <button class="toggle-btn active" data-mode="countdown" aria-pressed="true">
-            Countdown
+            Before
           </button>
           <button class="toggle-btn" data-mode="now" aria-pressed="false">
-            Now
+            During
           </button>
         </div>
 
@@ -152,9 +154,9 @@ const copyrightYear = currentYear > startYear ? `${startYear}–${currentYear}` 
         </p>
       </div>
 
-      <div>
-      <h2>How do I get started?</h2>
-      <p class="setup">Just log in to your Google account in System Settings and sync calendars. You'll be prompted to allow calendar access the first time you run Ignition. That's it!</p>
+      <div class="setup">
+        <h2>How do I get started?</h2>
+        <p>Just log in to your Google account in System Settings and sync calendars. You'll be prompted to allow calendar access the first time you run Ignition. That's it!</p>
       </div>
 
       <!-- Feature cards -->
